@@ -13,60 +13,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Regulator_Linear:LM317_SOT-223 U1
-U 1 1 5FBD8BD1
-P 4350 2200
-F 0 "U1" H 4350 2442 50  0000 C CNN
-F 1 "LM317_SOT-223" H 4350 2351 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4350 2450 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm317.pdf" H 4350 2200 50  0001 C CNN
-	1    4350 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5FBDB859
-P 4800 2350
-F 0 "R1" H 4870 2396 50  0000 L CNN
-F 1 "200" H 4870 2305 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4730 2350 50  0001 C CNN
-F 3 "~" H 4800 2350 50  0001 C CNN
-	1    4800 2350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 2200 4800 2200
-Wire Wire Line
-	4350 2500 4800 2500
 Wire Wire Line
 	3150 1750 3150 2200
 Wire Wire Line
 	3150 2200 3900 2200
-$Comp
-L Device:R R2
-U 1 1 5FBDC472
-P 4800 2650
-F 0 "R2" H 4870 2696 50  0000 L CNN
-F 1 "330" H 4870 2605 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4730 2650 50  0001 C CNN
-F 3 "~" H 4800 2650 50  0001 C CNN
-	1    4800 2650
-	1    0    0    -1  
-$EndComp
-Connection ~ 4800 2500
 Wire Wire Line
 	3350 1750 3350 2800
-Wire Wire Line
-	3350 2800 4800 2800
 Text Notes 4700 2200 0    50   ~ 0
 3.3v
-Connection ~ 4800 2200
-Connection ~ 4800 2800
-Wire Wire Line
-	4800 2200 5300 2200
-Wire Wire Line
-	4800 2800 5300 2800
 $Comp
 L Device:C C1
 U 1 1 5FBE4444
@@ -216,8 +170,6 @@ Wire Wire Line
 	7950 2200 8200 2200
 Wire Wire Line
 	7950 2800 7950 2500
-Text Notes 7500 2150 0    50   ~ 10
-Check GPIO2 pullup
 $Comp
 L Connector:Conn_01x06_Female J2
 U 1 1 5FBF93C0
@@ -309,14 +261,6 @@ F 3 "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf" H 7450 4250 50
 $EndComp
 Wire Wire Line
 	8200 3900 9200 3900
-Wire Wire Line
-	7450 4050 7450 3400
-Wire Wire Line
-	7450 3400 7400 3400
-Wire Wire Line
-	7400 3300 7700 3300
-Wire Wire Line
-	7700 3300 7700 4650
 Connection ~ 7850 3900
 Wire Wire Line
 	7850 3900 8200 3900
@@ -324,10 +268,6 @@ Wire Wire Line
 	7400 3500 7850 3500
 Wire Wire Line
 	7850 3500 7850 3600
-Wire Wire Line
-	7400 3200 7950 3200
-Wire Wire Line
-	7950 3200 7950 5250
 Wire Wire Line
 	8200 3900 8200 4350
 Wire Wire Line
@@ -376,4 +316,36 @@ Wire Wire Line
 Connection ~ 3900 2200
 Wire Wire Line
 	3900 2200 4050 2200
+Wire Wire Line
+	7700 3200 7400 3200
+Wire Wire Line
+	7700 3200 7700 4650
+Wire Wire Line
+	3350 2800 4350 2800
+Wire Wire Line
+	4650 2200 5300 2200
+$Comp
+L Regulator_Linear:LM1117-3.3 U1
+U 1 1 5FBD4285
+P 4350 2200
+F 0 "U1" H 4350 2442 50  0000 C CNN
+F 1 "LM1117-3.3" H 4350 2351 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4350 2200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 4350 2200 50  0001 C CNN
+	1    4350 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2500 4350 2800
+Connection ~ 4350 2800
+Wire Wire Line
+	4350 2800 5300 2800
+Wire Wire Line
+	7950 3400 7950 5250
+Wire Wire Line
+	7400 3400 7950 3400
+Wire Wire Line
+	7400 3300 7450 3300
+Wire Wire Line
+	7450 3300 7450 4050
 $EndSCHEMATC
